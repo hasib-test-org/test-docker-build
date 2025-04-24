@@ -9,6 +9,7 @@ RUN apt-get update && \
     apt-get install -y python3-pip swig yamllint && \
     apt install -y python3-setuptools python3-wheel && \
     apt install -y pipx && \
+    apt install -y tmux && \
     pipx install dtschema && \
     curl "https://android.googlesource.com/platform/system/tools/mkbootimg/+/refs/heads/android12-release/mkbootimg.py?format=TEXT" | base64 --decode > /usr/bin/mkbootimg && \
     chmod +x /usr/bin/mkbootimg && \
