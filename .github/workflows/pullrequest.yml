@@ -29,8 +29,6 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
 
       - name: Install Docker system in the runner
         uses: ./.github/actions/install-docker
