@@ -1,0 +1,11 @@
+name: Run Checks after PR approval
+
+on:
+  workflow_run:
+    workflows: ["Detect PR approval"]
+    types:
+      - completed
+
+jobs:
+  checks:
+    uses: hasib-test-org/test-docker-build/.github/workflows/pullrequest.yml@master

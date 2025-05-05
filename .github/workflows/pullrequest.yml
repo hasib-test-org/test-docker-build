@@ -5,7 +5,7 @@ run-name: docker_build
 on:
   workflow_dispatch:
 
-  pull_request:
+  workflow_call:
 
 env:
   DOCKER_FILE_PATH: docker/
@@ -29,8 +29,6 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref_name }}
 
       - name: Install Docker system in the runner
         uses: ./.github/actions/install-docker

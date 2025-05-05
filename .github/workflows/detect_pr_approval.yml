@@ -1,0 +1,13 @@
+name: Detect PR approval
+
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  check_approval:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger next workflow
+        run: echo "Next workflow triggered"
