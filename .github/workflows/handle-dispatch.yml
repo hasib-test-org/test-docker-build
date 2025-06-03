@@ -1,0 +1,12 @@
+on:
+  repository_dispatch:
+    types: [i-got-it]
+ 
+jobs:
+  handle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print event info
+        run: |
+          echo "Received event from ${{ github.event.client_payload.repository }}"
+          echo "Ref: ${{ github.event.client_payload.ref }}"
