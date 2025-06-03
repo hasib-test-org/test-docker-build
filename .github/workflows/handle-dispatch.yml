@@ -1,3 +1,4 @@
+name: handle-dispatch
 on:
   repository_dispatch:
     types: [i-got-it]
