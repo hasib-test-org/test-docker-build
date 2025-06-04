@@ -1,9 +1,7 @@
 name: handle-dispatch
 on:
-  push:
-    branches: ['master']
-  pull_request:
-    branches: ['master']
+  repository_dispatch:
+    types: [i-got-it]
  
 jobs:
   handle:
@@ -11,4 +9,5 @@ jobs:
     steps:
       - name: Print event info
         run: |
-          echo "HELLO"
+          echo "Received event from ${{ github.event.client_payload.repository }}"
+          echo "Ref: ${{ github.event.client_payload.ref }}"
